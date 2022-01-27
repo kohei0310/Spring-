@@ -62,7 +62,7 @@
 									<input type="hidden" name="id2" value="${members.id}" />
 								</form:form></td>
 							<td>
-								<input type="hidden" name="id2" value="${members.id}" />
+
 
 								<!-- Button trigger modal -->
 								<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">削除</button>
@@ -76,11 +76,15 @@
 												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 											</div>
 
-											<div class="modal-body">本当に削除しますか？</div>
+											<div class="modal-body">本当に「ID：<c:out value="${members.id }" />」を削除しますか？</div>
 
 											<div class="modal-footer">
 												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
-												<button type="button" class="btn btn-primary">削除</button>
+
+												<form action="edit" method="get">
+													<input type="hidden" name="id2" value="${members.id}" />
+													<button type="submit" class="btn btn-danger">削除</button>
+												</form>
 											</div>
 										</div>
 
