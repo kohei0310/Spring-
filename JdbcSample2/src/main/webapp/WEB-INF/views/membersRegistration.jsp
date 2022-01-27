@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="resources/styles.css">
  -->
 </head>
-<body>
+<body style="padding-top: 100px">
     <div class="container">
         <jsp:include page="header.jsp"></jsp:include>
         <main>

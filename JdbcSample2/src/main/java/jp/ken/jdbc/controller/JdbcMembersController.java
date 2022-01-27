@@ -168,4 +168,18 @@ public class JdbcMembersController {
 
     	return "membersEdit";
     }
+
+    @RequestMapping(value="delete", method = RequestMethod.GET)
+    public String delete(@RequestParam("delid") String delid, Model model ) {
+
+    	//削除処理
+        int numberOfRow = membersDao.delete( delid );
+        if (numberOfRow == 0){
+            model.addAttribute("message", "削除に失敗しました。");
+            model.addAttribute("headline", "会員検索" );
+            return "membersSearch";
+        }
+
+        return "redirect:/search";
+    }
 }

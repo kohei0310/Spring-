@@ -99,4 +99,27 @@ public class MembersDao {
         }
         return numberOfRow;
 	}
+
+	public int delete(String delid) {
+		String sql = "delete from members where id=?";
+
+		Object[] parameters = { new Integer(delid) };
+        TransactionStatus transactionStatus = null;
+        DefaultTransactionDefinition transactionDefinition = new DefaultTransactionDefinition();
+        int numberOfRow = 0;
+        try {
+            transactionStatus = transactionManager.getTransaction(transactionDefinition);
+            numberOfRow = jdbcTemplate.update(sql, parameters);
+            transactionManager.commit(transactionStatus);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            transactionManager.rollback(transactionStatus);
+        } catch (TransactionException e) {
+            e.printStackTrace();
+            if (transactionStatus != null) {
+                transactionManager.rollback(transactionStatus);
+            }
+        }
+        return numberOfRow;
+	}
 }
