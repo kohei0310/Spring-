@@ -70,7 +70,7 @@
 							<td>
 
 								<!-- Button trigger modal -->
-								<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal${members.id }">削除</button>
+								<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal">削除</button>
 								<!-- Modal -->
 								<div class="modal fade" id="modal${members.id }" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
 									<div class="modal-dialog">
