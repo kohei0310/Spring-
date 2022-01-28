@@ -6,7 +6,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>JDBC Sample</title>
+<title>会員管理システム</title>
 
 <!-- BootStrap -->
 <link
